@@ -47,19 +47,31 @@ class StoreButtonColorCommand extends Command
 
         try {
             $store = $this->storeManager->getStore($storeId);
-            $storeDesign = $store->getConfig('design/head/includes');
+            $this->addColorToStore($store->getConfig('design/head/includes'), $colorHex);
         } catch (NoSuchEntityException $e) {
             throw new LocalizedException(__($e->getMessage()));
         }
 
-        $output->writeln('Enabled test mode.');
+        $output->writeln('The buttons color has been changed.');
     }
 
     /*
      * @todo
+     * Check if the hex is valid, else throw and error.
      */
     protected function validateHex($hex)
     {
         return $hex;
+    }
+
+    /*
+     * @todo
+     * Check the $storeDesign content if the content has been set.
+     * If true, replace the color code.
+     * Else insert the less code.
+     */
+    protected function addColorToStore($storeDesign, $colorHex)
+    {
+
     }
 }
