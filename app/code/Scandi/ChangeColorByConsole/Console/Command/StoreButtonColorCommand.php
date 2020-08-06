@@ -113,7 +113,7 @@ class StoreButtonColorCommand extends Command
     }
 
     /**
-     * Check if the colorHex inputed is valid
+     * Check if the colorHex inputted is valid
      *
      * @param $hex
      * @throws LocalizedException
