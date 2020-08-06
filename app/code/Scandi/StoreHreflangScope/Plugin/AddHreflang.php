@@ -63,12 +63,8 @@ class AddHreflang
      * @return mixed
      * @throws LocalizedException
      */
-    public function aroundPrepareResultPage(
-        Page $subject,
-        callable $proceed,
-        $index,
-        $pageId
-    ) {
+    public function aroundPrepareResultPage(Page $subject, callable $proceed, $index, $pageId)
+    {
         $result = $proceed($index, $pageId);
         $pageStores = $this->_pageRepositoryInterface->getById($pageId)->getStoreId();
 
@@ -80,6 +76,7 @@ class AddHreflang
     }
 
     /**
+     * For each store where the page is visible, creates a hreflang
      * @param $pageStores
      * @param $result
      * @param $pageId
@@ -100,6 +97,7 @@ class AddHreflang
     }
 
     /**
+     * Get base url from store and concatenate with actual page url
      * @param $storeId
      * @param $pageId
      * @return string
@@ -118,6 +116,7 @@ class AddHreflang
     }
 
     /**
+     * Creates an array with locale of each store
      * @param $pageStores
      * @return array
      */
@@ -131,6 +130,7 @@ class AddHreflang
     }
 
     /**
+     * Changes the locale format to hreflang pattern
      * @param $locale
      * @return string
      */
