@@ -1,0 +1,16 @@
+{
+    "name": "scandi/module-randomize-shipping",
+    "description": "A module that will remove two random input from shipping step, invert the label and the next direction",
+    "type": "magento2-module",
+    "version": "1.0.0",
+    "license": [
+        "OSL-3.0",
+        "AFL-3.0"
+    ],
+    "autoload": {
+        "files": [ "registration.php" ],
+        "psr-4": {
+            "Scandi\\RandomizeShipping\\": ""
+        }
+    }
+}
